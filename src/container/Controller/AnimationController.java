@@ -61,14 +61,14 @@ abstract public class AnimationController {
             angle[1] += vector[5];
             dice[0].setRotate(angle[0]);
             dice[1].setRotate(angle[1]);
-            dice[0].setImage(new Image("sprites\\dice" + (r.nextInt(6) + 1) + ".png"));                      //set the images of the dices randomly
-            dice[1].setImage(new Image("sprites\\dice" + (r.nextInt(6) + 1) + ".png"));
+            dice[0].setImage(new Image("sprites/dice" + (r.nextInt(6) + 1) + ".png"));                       //set the images of the dices randomly
+            dice[1].setImage(new Image("sprites/dice" + (r.nextInt(6) + 1) + ".png"));
         }));
         timeline.setCycleCount(15);                                                                                     //repeat 15 times
         timeline.play();
         timeline.setOnFinished(t -> {
-            dice[0].setImage(new Image("sprites\\dice" + a + ".png"));                                              //set the images of the dices accordingly
-            dice[1].setImage(new Image("sprites\\dice" + b + ".png"));
+            dice[0].setImage(new Image("sprites/dice" + a + ".png"));                                               //set the images of the dices accordingly
+            dice[1].setImage(new Image("sprites/dice" + b + ".png"));
             TurnController.checkAfterRoll();
         });
     }

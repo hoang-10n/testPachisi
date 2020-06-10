@@ -68,7 +68,7 @@ abstract public class TurnController {
                 firstTurn.clear();
                 startTurn();
                 return true;
-            } else history.setText("");
+            }
         }
         return false;
     }
@@ -94,7 +94,7 @@ abstract public class TurnController {
             history.setText("");
             history.setVisible(false);
         }
-        turnIndicator.setImage(new Image("sprites\\" + Storage.player.get(turn) + ".png"));                         //set the turn indicator
+        turnIndicator.setImage(new Image("sprites/" + Storage.player.get(turn) + ".png"));                         //set the turn indicator
         if (comPlayer[turn]) {                                                                                          //if this is a computer player turn, then disable the rollBt, pause then roll the dices
             rollBt.setDisable(true);
             PauseTransition transition = new PauseTransition(Duration.millis(500));

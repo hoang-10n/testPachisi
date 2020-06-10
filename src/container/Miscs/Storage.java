@@ -5,16 +5,16 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 
 abstract public class Storage {
     public static Circle[] move;
     public static Rectangle[] home;
     public static Chess[] chess = new Chess[16];
     public static int[] dices = new int[3];
-    public static ArrayList<Character> player = new ArrayList<>(List.of('b','y','g','r'));
+    public static ArrayList<Character> player = new ArrayList<>(Arrays.asList('b', 'y', 'g', 'r'));                     //TODO List.of() doesn't work in java 8
     public static HashMap<Chess, int[]> possibleMove = new HashMap<>();
     public static String[] playerName = new String[4];
     public static int[] score = new int[4];

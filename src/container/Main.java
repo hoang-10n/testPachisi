@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+//TODO change to java 8,  the size gets much smaller
+
 public class Main extends Application {
 
     @Override

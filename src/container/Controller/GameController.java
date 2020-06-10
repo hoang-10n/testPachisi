@@ -63,7 +63,7 @@ public class GameController {
                 String temp = Storage.playerName[i] + "\n" + Storage.score[i];
                 endScore[k].setText(temp);
                 if (k == TurnController.getTurn())
-                    endScore[k].setGraphic(new ImageView(new Image("sprites\\finisher.png")));
+                    endScore[k].setGraphic(new ImageView(new Image("sprites/finisher.png")));
             }
             k++;
         }
@@ -118,11 +118,14 @@ public class GameController {
 
     @FXML
     //mute or unmute the sound FX
-    private void soundFX() {                                                                                            
-        char[] icon = soundFXIcon.getImage().getUrl().toCharArray();
-        icon[icon.length - 5] = (char) ('0' + '1' - icon[icon.length - 5]);
-        MediaController.mute(icon[icon.length - 5]);
-        soundFXIcon.setImage(new Image(String.valueOf(icon)));
+    private void soundFX() {
+        char icon = soundFXIcon.getId().equals("0") ? '1' : '0';
+        soundFXIcon.setId(String.valueOf(icon));
+        String path = "sprites/sound" + icon + ".jpg";
+//        char[] icon = soundFXIcon.getImage().getUrl().toCharArray();                                                  //TODO Image.getUrl doesn't work in java 8
+//        icon[icon.length - 5] = (char) ('0' + '1' - icon[icon.length - 5]);
+        MediaController.mute(icon);
+        soundFXIcon.setImage(new Image(path));
     }
 
     @FXML
@@ -145,7 +148,8 @@ public class GameController {
 
     @FXML
     //initialize other methods, displays, sounds and classes
-    private void initialize(){                                                                                          
+    private void initialize(){
+        soundFXIcon.setId("0");
         endScore = new Label[]{end0, end1, end2, end3};
         storageInitialize();
         AnimationController.initialize(dice0, dice1);
@@ -154,10 +158,11 @@ public class GameController {
         LanguageController.changeLanguage();
         changeLanguage();
 //        setTest();
-        for (int i = 0; i < 4; i++)                                                                                     //prevent the chess from the computer and the not-chosen players from being clicked
+        for (int i = 0; i < 4; i++) {                                                                                   //prevent the chess from the computer and the not-chosen players from being clicked
             if (comPlayer[i] || !chosenPlayer[i])
                 for (int k = i * 4; k < i * 4 + 4; k++)
                     Storage.chess[k].getImage().setOnMouseClicked(null);
+        }
         double volume = MediaController.getVolume();
         MediaController.changeVolume(volume);
         volumeSlider.setValue(volume * 100);                                                                            //set the value of the volume slider and initialize its listener
