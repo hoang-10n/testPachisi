@@ -124,16 +124,6 @@ abstract public class Player {
 //        print();
     }
 
-    //print out the possible moves
-    private static void print() {
-        for (int i = t; i < t + 4; i++) {
-            Chess temp = Storage.chess[i];
-            System.out.print(temp.getImage().getId() + ": ");
-            for (int k : Storage.possibleMove.get(temp)) System.out.print(k + " ");
-            System.out.println();
-        }
-    }
-
     //roll the dices
     public static void rollDices() {
         MediaController.playRollSound();

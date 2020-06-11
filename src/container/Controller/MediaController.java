@@ -58,7 +58,7 @@ abstract public class MediaController
         return mediaPlayer.getVolume();
     }
 
-    //play and set  volume fo the media
+    //play and set  volume for the media
     public static void changeVolume(double volume) {
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.play();

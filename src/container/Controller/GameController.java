@@ -69,14 +69,6 @@ public class GameController {
         }
     }
 
-    //set test case
-    private void setTest() {
-        Storage.chess[0].setTest(-6);
-        Storage.chess[1].setTest(-5);
-        Storage.chess[2].setTest(-4);
-        Storage.chess[3].setTest(-1);
-    }
-
     //initialize the Storage and the other properties
     private void storageInitialize() {
         Storage.scoreDisplay = new Label[]{score0, score1, score2, score3};
@@ -122,8 +114,6 @@ public class GameController {
         char icon = soundFXIcon.getId().equals("0") ? '1' : '0';
         soundFXIcon.setId(String.valueOf(icon));
         String path = "sprites/sound" + icon + ".jpg";
-//        char[] icon = soundFXIcon.getImage().getUrl().toCharArray();                                                  //TODO Image.getUrl doesn't work in java 8
-//        icon[icon.length - 5] = (char) ('0' + '1' - icon[icon.length - 5]);
         MediaController.mute(icon);
         soundFXIcon.setImage(new Image(path));
     }
