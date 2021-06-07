@@ -26,7 +26,7 @@ abstract public class Storage {
 
     static void updateScore(int add, int index) {
         score[index] += add;
-        String str = scoreDisplay[index].getText().substring(0, 7);
+        String str = scoreDisplay[index].getText().substring(0, 6);
         scoreDisplay[index].setText(str + score[index]);
     }
 

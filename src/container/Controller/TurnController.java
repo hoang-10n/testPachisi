@@ -136,4 +136,8 @@ abstract public class TurnController {
             checkEndTurn();
         }
     }
+
+    public static void clearComPlayer() {
+        TurnController.comPlayer = new boolean[]{false, false, false, false};
+    }
 }

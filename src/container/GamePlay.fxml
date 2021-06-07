@@ -11,8 +11,8 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="container.Controller.GameController">
-   <ImageView fitHeight="800.0" fitWidth="1075.0" pickOnBounds="true" preserveRatio="true">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="container.Controller.GameController">
+   <ImageView fitHeight="800.0" fitWidth="1075.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../sprites/background.jpg" />
       </image>
@@ -219,7 +219,7 @@
       </Label>
     </AnchorPane>
     <ImageView fx:id="turnIndicator" fitHeight="122.0" fitWidth="107.0" layoutX="830.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" />
-   <Button fx:id="rollBt" layoutX="821.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#rollDices" prefWidth="125.0" text="Roll Dices" AnchorPane.rightAnchor="53.39999999999998">
+   <Button fx:id="rollBt" layoutX="821.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#rollDices" prefWidth="125.0" text="Roll Dices">
       <font>
          <Font name="Times New Roman" size="18.0" />
       </font>
@@ -243,6 +243,16 @@
          <Slider fx:id="volumeSlider" layoutX="89.4" layoutY="13.0" majorTickUnit="10.0" minorTickCount="0" showTickMarks="true" AnchorPane.rightAnchor="1.0" />
       </children>
    </AnchorPane>
+   <Button fx:id="menuWhenPlay" layoutX="820.0" layoutY="717.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu" prefWidth="125.0" text="Main Menu">
+      <font>
+         <Font name="Times New Roman" size="18.0" />
+      </font>
+   </Button>
+   <Button fx:id="exitWhenPlay" layoutX="821.0" layoutY="753.0" mnemonicParsing="false" onMouseClicked="#exit" prefWidth="125.0" text="Exit Game">
+      <font>
+         <Font name="Times New Roman" size="18.0" />
+      </font>
+   </Button>
    <AnchorPane fx:id="endScreen" prefHeight="200.0" prefWidth="200.0" visible="false">
       <children>
          <ImageView fitHeight="800.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
@@ -270,12 +280,12 @@
                <Font name="Times New Roman" size="18.0" />
             </font>
          </Label>
-         <Button fx:id="mainMenu" layoutX="821.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu" prefWidth="125.0" text="Main Menu">
+         <Button fx:id="menuWhenEnd" layoutX="821.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu" prefWidth="125.0" text="Main Menu">
             <font>
                <Font name="Times New Roman" size="18.0" />
             </font>
          </Button>
-         <Button fx:id="exit" layoutX="821.0" layoutY="282.0" mnemonicParsing="false" onMouseClicked="#exit" prefWidth="125.0" text="Exit Game">
+         <Button fx:id="exitWhenEnd" layoutX="821.0" layoutY="282.0" mnemonicParsing="false" onMouseClicked="#exit" prefWidth="125.0" text="Exit Game">
             <font>
                <Font name="Times New Roman" size="18.0" />
             </font>

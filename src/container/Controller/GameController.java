@@ -29,7 +29,7 @@ public class GameController {
     private static AnchorPane end;
     private static Label[] endScore;
     @FXML
-    private Button rollBt, language, playAgain, exit, mainMenu, soundFX;
+    private Button rollBt, language, playAgain, exitWhenEnd, menuWhenEnd, exitWhenPlay, menuWhenPlay, soundFX;
     @FXML
     private Label name0, name1, name2, name3, score0, score1, score2, score3, volumeLabel, end0, end1, end2, end3, history;
     @FXML
@@ -99,8 +99,10 @@ public class GameController {
         volumeLabel.setText(LanguageController.getString("volume"));
         language.setText(LanguageController.getString("language"));
         playAgain.setText(LanguageController.getString("again"));
-        exit.setText(LanguageController.getString("exit"));
-        mainMenu.setText(LanguageController.getString("main_menu"));
+        exitWhenEnd.setText(LanguageController.getString("exit"));
+        menuWhenEnd.setText(LanguageController.getString("main_menu"));
+        exitWhenPlay.setText(LanguageController.getString("exit"));
+        menuWhenPlay.setText(LanguageController.getString("main_menu"));
         soundFX.setText(LanguageController.getString("soundFX"));
         history.setText(history.getText().replace(firstTurn, LanguageController.getString("firstThrow")));
         for (int i = 0; i < 4; i++)
@@ -122,14 +124,16 @@ public class GameController {
     //play the game again with the same settings, players and scores
     private void playAgain(MouseEvent event) throws IOException {                                                       
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../GamePlay.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/container/GamePlay.fxml"))));
     }
 
     @FXML
     //go to MainMenu
-    private void backToMainMenu(MouseEvent event) throws IOException {                                                  
+    private void backToMainMenu(MouseEvent event) throws IOException {
+        TurnController.clearComPlayer();
+        MediaController.stopMusic();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../MainMenu.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/container/MainMenu.fxml"))));
     }
 
     @FXML
